@@ -199,6 +199,21 @@ a:focus-visible {
   margin-top: 2rem;
 }
 
+.app-store-badge {
+  display: inline-flex;
+  align-self: flex-start;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+}
+
+.app-store-badge img {
+  display: block;
+  width: auto;
+  height: 44px;
+  max-width: 100%;
+}
+
 .button {
   display: inline-flex;
   min-height: 3.1rem;
@@ -593,6 +608,12 @@ a:focus-visible {
   color: var(--white);
 }
 
+.apple-trademark-credit {
+  color: rgb(255 255 255 / 58%);
+  font-size: 0.72rem;
+  line-height: 1.6;
+}
+
 @media (min-width: 560px) {
   .shell {
     width: min(calc(100% - 2rem), 1080px);
@@ -612,6 +633,10 @@ a:focus-visible {
     flex-wrap: wrap;
   }
 
+  .app-store-badge {
+    align-self: auto;
+  }
+
   .wide-break {
     display: initial;
   }
@@ -628,6 +653,10 @@ a:focus-visible {
   .footer-inner {
     align-items: end;
     grid-template-columns: 1fr auto;
+  }
+
+  .apple-trademark-credit {
+    grid-column: 1 / -1;
   }
 }
 
