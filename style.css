@@ -423,12 +423,24 @@ a:focus-visible {
   background: var(--paper-green);
 }
 
+.information-card-wide {
+  grid-column: 1 / -1;
+}
+
 .information-card .card-kicker {
   margin-bottom: 0.45rem;
 }
 
 .information-card > p:not(.card-kicker):not(.contact-address) {
   margin-bottom: 1rem;
+}
+
+.release-notes {
+  display: grid;
+  gap: 0.4rem;
+  margin: 0;
+  padding-left: 1.25rem;
+  color: var(--muted);
 }
 
 .contact-address {
