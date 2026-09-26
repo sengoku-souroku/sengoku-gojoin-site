@@ -233,20 +233,38 @@ a:focus-visible {
   color: var(--vermilion-dark);
 }
 
-.release-note {
+.release-status {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.release-status li {
   display: flex;
   align-items: center;
   gap: 0.55rem;
-  margin: 1rem 0 0;
   color: var(--muted);
   font-size: 0.88rem;
 }
 
-.release-note span {
+.release-status .status-dot {
   width: 0.55rem;
   height: 0.55rem;
+  flex: 0 0 auto;
   border-radius: 50%;
   background: var(--vermilion);
+}
+
+.release-status .status-live {
+  color: var(--green);
+  font-weight: 750;
+}
+
+.release-status .status-live .status-dot {
+  background: var(--green);
 }
 
 .hero-facts {
@@ -579,6 +597,7 @@ a:focus-visible {
   .hero-actions {
     align-items: center;
     flex-direction: row;
+    flex-wrap: wrap;
   }
 
   .wide-break {
