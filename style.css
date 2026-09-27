@@ -214,6 +214,11 @@ a:focus-visible {
   max-width: 100%;
 }
 
+.hero-actions .button {
+  min-height: 44px;
+  padding: 0 1.25rem;
+}
+
 .button {
   display: inline-flex;
   min-height: 3.1rem;
