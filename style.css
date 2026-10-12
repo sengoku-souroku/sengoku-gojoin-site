@@ -14,6 +14,11 @@
   --notice: #f5ead6;
   --white: #fff;
   --shadow: 0 16px 44px rgb(28 45 38 / 9%);
+  --deep-green: #1f4b44;
+  --gold: #b8913f;
+  --gold-haze: rgb(201 163 82 / 22%);
+  --washi: #fbf7ee;
+  --mincho: "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Yu Mincho", YuMincho, "Noto Serif JP", serif;
 }
 
 * {
@@ -141,8 +146,10 @@ a:focus-visible {
   overflow: hidden;
   border-bottom: 1px solid var(--line);
   background:
-    radial-gradient(circle at 92% 5%, rgb(161 59 44 / 12%), transparent 20rem),
-    linear-gradient(150deg, var(--paper) 0%, var(--paper-green) 100%);
+    radial-gradient(ellipse 34rem 9rem at 82% 8%, var(--gold-haze), transparent 70%),
+    radial-gradient(ellipse 28rem 8rem at 8% 88%, var(--gold-haze), transparent 70%),
+    radial-gradient(circle at 100% 100%, rgb(31 75 68 / 10%), transparent 26rem),
+    linear-gradient(160deg, var(--washi) 0%, var(--paper-green) 100%);
 }
 
 .hero-layout {
@@ -251,80 +258,6 @@ a:focus-visible {
 .button-secondary:hover {
   border-color: var(--vermilion);
   color: var(--vermilion-dark);
-}
-
-.release-status {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-  margin: 1rem 0 0;
-  padding: 0;
-  list-style: none;
-}
-
-.release-status li {
-  display: flex;
-  align-items: center;
-  gap: 0.55rem;
-  color: var(--muted);
-  font-size: 0.88rem;
-}
-
-.release-status .status-dot {
-  width: 0.55rem;
-  height: 0.55rem;
-  flex: 0 0 auto;
-  border-radius: 50%;
-  background: var(--vermilion);
-}
-
-.release-status .status-live {
-  color: var(--green);
-  font-weight: 750;
-}
-
-.release-status .status-live .status-dot {
-  background: var(--green);
-}
-
-.hero-facts {
-  padding: 1.4rem;
-  border: 1px solid rgb(23 56 74 / 16%);
-  border-radius: 0.8rem;
-  background: rgb(255 255 255 / 72%);
-  box-shadow: var(--shadow);
-}
-
-.hero-facts-title {
-  margin: 0 0 1rem;
-  color: var(--indigo);
-  font-weight: 750;
-}
-
-.hero-facts dl {
-  margin: 0;
-}
-
-.hero-facts dl div {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 1rem;
-  padding-block: 0.8rem;
-  border-top: 1px solid var(--line);
-}
-
-.hero-facts dt {
-  color: var(--muted);
-  font-size: 0.74rem;
-  font-weight: 800;
-  letter-spacing: 0.11em;
-  text-transform: uppercase;
-}
-
-.hero-facts dd {
-  margin: 0;
-  font-weight: 750;
 }
 
 .section {
@@ -688,5 +621,319 @@ a:focus-visible {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+}
+
+/* ---- Product page (v1.2.0) ---- */
+
+.product-hero h1,
+.story-copy h2,
+.section-heading h2,
+.privacy-band h2,
+.final-cta h2 {
+  font-family: var(--mincho);
+  font-weight: 700;
+}
+
+.hero-tagline {
+  margin: 1.1rem 0 0;
+  color: var(--deep-green);
+  font-family: var(--mincho);
+  font-size: clamp(1.35rem, 5.5vw, 2rem);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  line-height: 1.5;
+}
+
+.hero-lead {
+  margin-top: 0.9rem;
+}
+
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hero-meta li {
+  padding: 0.2rem 0.7rem;
+  border: 1px solid rgb(31 75 68 / 22%);
+  border-radius: 999px;
+  background: rgb(255 255 255 / 60%);
+  color: var(--deep-green);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.hero-shot,
+.phone-shot {
+  margin: 0;
+  justify-self: center;
+}
+
+.hero-shot img,
+.phone-shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid rgb(31 75 68 / 14%);
+  border-radius: 1.1rem;
+  background: var(--washi);
+  box-shadow: var(--shadow);
+}
+
+.hero-shot {
+  width: min(100%, 300px);
+}
+
+.phone-shot {
+  width: min(100%, 260px);
+}
+
+.section-tinted {
+  background:
+    radial-gradient(ellipse 30rem 8rem at 90% 12%, var(--gold-haze), transparent 70%),
+    var(--paper-deep);
+}
+
+.story {
+  display: grid;
+  gap: 2rem;
+}
+
+.story-copy h2 {
+  margin: 0;
+  color: var(--indigo-deep);
+  font-size: clamp(1.75rem, 6vw, 2.6rem);
+  letter-spacing: 0.03em;
+  line-height: 1.4;
+}
+
+.story-copy > p:not(.eyebrow) {
+  max-width: 38rem;
+  margin: 1rem 0 0;
+  color: var(--muted);
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tag-list li {
+  padding: 0.35rem 0.85rem;
+  border: 1px solid var(--line);
+  border-radius: 0.4rem;
+  background: var(--white);
+  color: var(--deep-green);
+  font-weight: 700;
+}
+
+.check-list {
+  display: grid;
+  gap: 0.45rem;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.check-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  color: var(--ink);
+  font-weight: 650;
+}
+
+.check-list li::before {
+  position: absolute;
+  top: 0.72em;
+  left: 0.2rem;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: var(--vermilion);
+  content: "";
+}
+
+.premium-tag {
+  display: inline-block;
+  margin-left: 0.4rem;
+  padding: 0 0.55rem;
+  border-radius: 999px;
+  background: var(--deep-green);
+  color: var(--white);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  vertical-align: 0.1em;
+}
+
+.pdf-section {
+  background:
+    radial-gradient(ellipse 36rem 10rem at 12% 6%, var(--gold-haze), transparent 70%),
+    var(--washi);
+}
+
+.pdf-layout {
+  display: grid;
+  gap: 2rem;
+  justify-items: center;
+}
+
+.pdf-points {
+  display: grid;
+  width: 100%;
+  max-width: 30rem;
+  gap: 0.6rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pdf-points li {
+  display: grid;
+  gap: 0.1rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--gold);
+  border-radius: 0.45rem;
+  background: var(--white);
+}
+
+.pdf-points strong {
+  color: var(--deep-green);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+}
+
+.pdf-points span {
+  color: var(--ink);
+  font-weight: 650;
+}
+
+.premium-layout {
+  display: grid;
+  gap: 2rem;
+}
+
+.price-card {
+  padding: clamp(1.4rem, 5vw, 2.1rem);
+  border: 1px solid rgb(184 145 63 / 45%);
+  border-radius: 0.9rem;
+  background: var(--white);
+  box-shadow: var(--shadow);
+}
+
+.price-card h3 {
+  margin: 0;
+  color: var(--indigo-deep);
+  font-size: 1.15rem;
+}
+
+.price {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 0.6rem 0 0;
+}
+
+.price-amount {
+  color: var(--deep-green);
+  font-family: var(--mincho);
+  font-size: clamp(2.2rem, 8vw, 2.8rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.price-unit {
+  padding: 0.1rem 0.6rem;
+  border: 1px solid var(--gold);
+  border-radius: 999px;
+  color: #7a5f22;
+  font-weight: 750;
+}
+
+.price-note {
+  margin: 1rem 0 0;
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+.final-cta {
+  padding-block: clamp(3rem, 9vw, 5rem);
+  background:
+    radial-gradient(ellipse 30rem 8rem at 50% 0%, rgb(201 163 82 / 28%), transparent 70%),
+    var(--deep-green);
+  color: var(--white);
+  text-align: center;
+}
+
+.final-cta-inner {
+  display: grid;
+  gap: 1.5rem;
+  justify-items: center;
+}
+
+.final-cta h2 {
+  margin: 0;
+  font-size: clamp(1.6rem, 6vw, 2.3rem);
+  letter-spacing: 0.04em;
+  line-height: 1.45;
+}
+
+.final-cta .app-store-badge {
+  align-self: center;
+}
+
+.final-cta + .disclaimer {
+  margin-top: clamp(3rem, 9vw, 5rem);
+}
+
+.header-nav a,
+.footer-nav a {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+}
+
+.button:focus-visible,
+.app-store-badge:focus-visible {
+  outline: 3px solid rgb(161 59 44 / 45%);
+  outline-offset: 3px;
+}
+
+.final-cta a:focus-visible,
+.privacy-band a:focus-visible,
+.site-footer a:focus-visible {
+  outline-color: rgb(255 255 255 / 80%);
+}
+
+@media (min-width: 720px) {
+  .story-with-shot {
+    align-items: center;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  }
+
+  .story-reverse .story-copy {
+    order: 2;
+  }
+
+  .premium-layout {
+    align-items: center;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  }
+}
+
+@media (min-width: 960px) {
+  .pdf-layout {
+    align-items: center;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr) minmax(0, 1fr);
   }
 }
